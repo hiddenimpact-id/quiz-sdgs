@@ -95,36 +95,146 @@ button:hover{
 
 <script>
 
-const quiz=[
+const quiz = [
 
 {
-q:"1. SDGs yang bertujuan menghapus kemiskinan adalah...",
-o:["Tanpa Kemiskinan","Tanpa Kelaparan","Kehidupan Laut","Energi Bersih"],
-a:0
+q:"Berapakah jumlah tujuan Sustainable Development Goals (SDGs)?",
+o:["10 tujuan","15 tujuan","17 tujuan","20 tujuan"],
+a:2,
+info:"SDGs terdiri dari 17 tujuan global yang harus dicapai pada tahun 2030."
 },
 
 {
-q:"2. Berapa jumlah tujuan SDGs?",
-o:["10","15","17","20"],
-a:2
+q:"SDGs Nomor 1 memiliki tujuan utama...",
+o:["Tanpa Kemiskinan","Tanpa Kelaparan","Pendidikan Berkualitas","Energi Bersih"],
+a:0,
+info:"Tujuan pertama SDGs adalah menghapus kemiskinan dalam segala bentuk."
 },
 
 {
-q:"3. SDGs nomor 4 adalah...",
-o:["Kesetaraan Gender","Pendidikan Berkualitas","Air Bersih","Energi Bersih"],
-a:1
+q:"SDGs Nomor 2 membahas tentang...",
+o:["Kesetaraan Gender","Tanpa Kelaparan","Kehidupan Laut","Industri"],
+a:1,
+info:"SDGs 2 bertujuan mengakhiri kelaparan dan mendukung pertanian berkelanjutan."
 },
 
 {
-q:"4. Tujuan SDGs yang membahas perubahan iklim adalah...",
-o:["Ekosistem Laut","Penanganan Perubahan Iklim","Kemitraan","Kota Berkelanjutan"],
-a:1
+q:"Tujuan SDGs Nomor 3 adalah...",
+o:["Kesehatan yang Baik dan Kesejahteraan","Kota Berkelanjutan","Air Bersih","Kemitraan"],
+a:0,
+info:"SDGs 3 berfokus pada kesehatan dan kesejahteraan bagi semua orang."
 },
 
 {
-q:"5. SDGs nomor 5 adalah...",
-o:["Kesetaraan Gender","Kesehatan","Pekerjaan Layak","Industri"],
-a:0
+q:"Pendidikan Berkualitas merupakan SDGs nomor...",
+o:["2","4","6","8"],
+a:1,
+info:"SDGs nomor 4 memastikan pendidikan berkualitas yang inklusif."
+},
+
+{
+q:"Kesetaraan Gender merupakan SDGs nomor...",
+o:["3","5","7","10"],
+a:1,
+info:"SDGs 5 bertujuan mencapai kesetaraan gender dan pemberdayaan perempuan."
+},
+
+{
+q:"SDGs nomor 6 berkaitan dengan...",
+o:["Energi Bersih","Air Bersih dan Sanitasi","Perubahan Iklim","Ekonomi"],
+a:1,
+info:"Tujuan ini memastikan ketersediaan air bersih dan sanitasi untuk semua."
+},
+
+{
+q:"Energi Bersih dan Terjangkau adalah SDGs nomor...",
+o:["5","7","9","12"],
+a:1,
+info:"SDGs 7 mendorong penggunaan energi yang bersih dan berkelanjutan."
+},
+
+{
+q:"Pekerjaan Layak dan Pertumbuhan Ekonomi adalah SDGs nomor...",
+o:["6","8","11","15"],
+a:1,
+info:"SDGs 8 mendukung pekerjaan layak dan pertumbuhan ekonomi yang inklusif."
+},
+
+{
+q:"Industri, Inovasi, dan Infrastruktur merupakan SDGs nomor...",
+o:["7","8","9","13"],
+a:2,
+info:"SDGs 9 mendukung infrastruktur kuat dan inovasi teknologi."
+},
+
+{
+q:"Mengurangi Kesenjangan merupakan tujuan SDGs nomor...",
+o:["8","10","12","14"],
+a:1,
+info:"SDGs 10 bertujuan mengurangi ketimpangan antar masyarakat."
+},
+
+{
+q:"Kota dan Permukiman Berkelanjutan adalah SDGs nomor...",
+o:["9","11","13","16"],
+a:1,
+info:"SDGs 11 menciptakan kota yang aman, inklusif, dan berkelanjutan."
+},
+
+{
+q:"Konsumsi dan Produksi yang Bertanggung Jawab adalah SDGs nomor...",
+o:["10","12","14","17"],
+a:1,
+info:"SDGs 12 mengajak masyarakat menggunakan sumber daya secara bijak."
+},
+
+{
+q:"Penanganan Perubahan Iklim merupakan SDGs nomor...",
+o:["11","12","13","15"],
+a:2,
+info:"SDGs 13 berfokus pada aksi menghadapi perubahan iklim."
+},
+
+{
+q:"Ekosistem Laut merupakan SDGs nomor...",
+o:["12","13","14","16"],
+a:2,
+info:"SDGs 14 bertujuan menjaga laut dan sumber daya kelautan."
+},
+
+{
+q:"Ekosistem Daratan merupakan SDGs nomor...",
+o:["13","14","15","17"],
+a:2,
+info:"SDGs 15 melindungi hutan, keanekaragaman hayati, dan ekosistem darat."
+},
+
+{
+q:"Perdamaian, Keadilan, dan Kelembagaan yang Tangguh adalah SDGs nomor...",
+o:["14","15","16","17"],
+a:2,
+info:"SDGs 16 mendukung masyarakat damai dan institusi yang kuat."
+},
+
+{
+q:"Kemitraan untuk Mencapai Tujuan merupakan SDGs nomor...",
+o:["12","14","16","17"],
+a:3,
+info:"SDGs 17 menguatkan kerja sama global untuk mencapai semua tujuan."
+},
+
+{
+q:"SDGs pertama kali disepakati oleh negara-negara anggota PBB pada tahun...",
+o:["2010","2015","2020","2025"],
+a:1,
+info:"SDGs disahkan pada tahun 2015 melalui Agenda 2030."
+},
+
+{
+q:"Target pencapaian SDGs secara global adalah tahun...",
+o:["2025","2030","2035","2040"],
+a:1,
+info:"Seluruh 17 tujuan SDGs ditargetkan tercapai pada tahun 2030."
 }
 
 ];
