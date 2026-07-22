@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz SDGs</title>
+
+<style>
+body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    background:linear-gradient(135deg,#1abc9c,#2ecc71);
+}
+
+.container{
+    max-width:700px;
+    margin:50px auto;
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 10px 20px rgba(0,0,0,.2);
+}
+
+h2{
+    text-align:center;
+    color:#16a085;
+}
+
+#progress{
+    margin-bottom:20px;
+    color:#666;
+}
+
+.option{
+    display:block;
+    padding:15px;
+    margin:12px 0;
+    border:2px solid #ddd;
+    border-radius:10px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.option:hover{
+    background:#f5f5f5;
+}
+
+.option.selected{
+    border-color:#16a085;
+    background:#dff8f3;
+}
+
+button{
+    margin-top:20px;
+    padding:12px 25px;
+    border:none;
+    border-radius:10px;
+    background:#16a085;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#138d75;
+}
+
+#result{
+    text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>🌍 Quiz SDGs</h2>
+
+<div id="quiz">
+
+<div id="progress"></div>
+
+<h3 id="question"></h3>
+
+<div id="options"></div>
+
+<button onclick="nextQuestion()">Soal Berikutnya ➜</button>
+
+</div>
+
+<div id="result"></div>
+
+</div>
+
+<script>
+
+const quiz=[
+
+{
+q:"1. SDGs yang bertujuan menghapus kemiskinan adalah...",
+o:["Tanpa Kemiskinan","Tanpa Kelaparan","Kehidupan Laut","Energi Bersih"],
+a:0
+},
+
+{
+q:"2. Berapa jumlah tujuan SDGs?",
+o:["10","15","17","20"],
+a:2
+},
+
+{
+q:"3. SDGs nomor 4 adalah...",
+o:["Kesetaraan Gender","Pendidikan Berkualitas","Air Bersih","Energi Bersih"],
+a:1
+},
+
+{
+q:"4. Tujuan SDGs yang membahas perubahan iklim adalah...",
+o:["Ekosistem Laut","Penanganan Perubahan Iklim","Kemitraan","Kota Berkelanjutan"],
+a:1
+},
+
+{
+q:"5. SDGs nomor 5 adalah...",
+o:["Kesetaraan Gender","Kesehatan","Pekerjaan Layak","Industri"],
+a:0
+}
+
+];
+
+let current=0;
+let score=0;
+let selected=-1;
+
+function loadQuestion(){
+
+selected=-1;
+
+document.getElementById("progress").innerHTML=
+"Soal "+(current+1)+" dari "+quiz.length;
+
+document.getElementById("question").innerHTML=quiz[current].q;
+
+const options=document.getElementById("options");
+
+options.innerHTML="";
+
+quiz[current].o.forEach((item,index)=>{
+
+const div=document.createElement("div");
+
+div.className="option";
+
+div.innerHTML=item;
+
+div.onclick=function(){
+
+document.querySelectorAll(".option").forEach(el=>el.classList.remove("selected"));
+
+div.classList.add("selected");
+
+selected=index;
+
+}
+
+options.appendChild(div);
+
+});
+
+}
+
+loadQuestion();
+
+function nextQuestion(){
+
+if(selected==-1){
+
+alert("Silakan pilih jawaban terlebih dahulu.");
+
+return;
+
+}
+
+if(selected===quiz[current].a){
+
+score++;
+
+}
+
+current++;
+
+if(current<quiz.length){
+
+loadQuestion();
+
+}else{
+
+document.getElementById("quiz").style.display="none";
+
+document.getElementById("result").innerHTML=`
+
+<h2>🎉 Quiz Selesai</h2>
+
+<h1>${score} / ${quiz.length}</h1>
+
+<p>Nilai Anda : <b>${Math.round(score/quiz.length*100)}</b></p>
+
+<button onclick="location.reload()">Ulangi Quiz</button>
+
+`;
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
