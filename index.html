@@ -15,11 +15,12 @@ body{
 
 .container{
     width:90%;
-    max-width:550px;
-    margin:30px auto;
+    max-width:500px;
+    margin:20px auto;
     background:#fff;
-    padding:20px;
+    padding:15px;
     border-radius:15px;
+    box-sizing:border-box;
 }
 
 h2{
@@ -68,6 +69,37 @@ button:hover{
 
 #result{
     text-align:center;
+}
+
+@media (max-width:600px){
+
+body{
+    padding:10px;
+}
+
+.container{
+    width:95%;
+    padding:15px;
+    margin:10px auto;
+}
+
+h2{
+    font-size:20px;
+}
+
+#question{
+    font-size:17px;
+}
+
+.option{
+    padding:10px;
+    margin:8px 0;
+    font-size:14px;
+}
+
+button{
+    width:100%;
+    font-size:14px;
 }
 </style>
 </head>
